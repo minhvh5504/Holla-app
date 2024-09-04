@@ -1,9 +1,8 @@
+import LoginScreen from '@views/LoginScreen'
 import React from 'react'
 import { SafeAreaView } from 'react-native'
 
-import LoginScreen from './login/LoginScreen'
-
-const RootComponent = () => {
+const RootNavigation = () => {
   return (
     <SafeAreaView>
       <LoginScreen />
@@ -11,4 +10,4 @@ const RootComponent = () => {
   )
 }
 
-export default RootComponent
+export default RootNavigation
