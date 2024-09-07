@@ -1,7 +1,7 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import Checkbox from 'expo-checkbox'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Image, Alert } from 'react-native'
 
 const LoginScreen = () => {
@@ -11,9 +11,8 @@ const LoginScreen = () => {
   const [passWord, setPassWord] = useState('')
 
   const handleLogin = () => {
-    if (!userName) {
-      Alert.alert('Error', 'Username is required!')
-    } else {
+    if (!userName) Alert.alert('Error', 'Username is required!')
+    else {
       if (!passWord) {
         Alert.alert('Error', 'Password is required!')
         return
@@ -58,6 +57,13 @@ const LoginScreen = () => {
   const onSignup = () => {
     console.log('onSignup.')
   }
+
+  useEffect(() => {
+    if (isCheck) {
+      console.log('Remember account.')
+    }
+  }, [isCheck])
+
   return (
     <View>
       <View>
