@@ -1,6 +1,5 @@
-import LoginScreen from '@views/LoginScreen'
-import React from 'react'
 import RegisterScreen from '@views/RegisterScreen'
+import React from 'react'
 
 const RootNavigation = () => {
   return <RegisterScreen />
