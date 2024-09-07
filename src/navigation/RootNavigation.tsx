@@ -1,8 +1,9 @@
 import LoginScreen from '@views/LoginScreen'
 import React from 'react'
+import RegisterScreen from '@views/RegisterScreen'
 
 const RootNavigation = () => {
-  return <LoginScreen />
+  return <RegisterScreen />
 }
 
 export default RootNavigation
