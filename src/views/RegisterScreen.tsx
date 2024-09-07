@@ -43,7 +43,7 @@ const RegisterScreen = () => {
                   'Password must include at least 1 uppercase letter, 1 special character, and both letters and numbers!'
                 )
               } else {
-                console.log('Signup successful.')
+                console.log('Signup account successful.')
               }
             }
           }
