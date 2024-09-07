@@ -1,7 +1,9 @@
+import LogoApple from '@assets/svg/logoApple.svg'
+import LogoGoogle from '@assets/svg/logoGoogle.svg'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import React, { useState } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Image, Alert } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
 
 const RegisterScreen = () => {
   const [checkPasswordVisible, setPasswordVisible] = useState(false)
@@ -114,10 +116,10 @@ const RegisterScreen = () => {
         <Text>or</Text>
         <View className="flex-row gap-8">
           <TouchableOpacity onPress={onLoginGoogle}>
-            <Image source={require('@assets/image/login/logoGoogle.png')} />
+            <LogoGoogle />
           </TouchableOpacity>
           <TouchableOpacity onPress={onLoginApple}>
-            <Image source={require('@assets/image/login/logoApple.png')} />
+            <LogoApple />
           </TouchableOpacity>
         </View>
       </View>
