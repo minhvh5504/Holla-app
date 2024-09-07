@@ -2,7 +2,9 @@ import FontAwesome from '@expo/vector-icons/FontAwesome'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import Checkbox from 'expo-checkbox'
 import React, { useState, useEffect } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Image, Alert } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
+import LogoGoogle from '@assets/svg/logoGoogle.svg'
+import LogoApple from '@assets/svg/logoApple.svg'
 
 const LoginScreen = () => {
   const [isCheck, setCheck] = useState(false)
@@ -120,10 +122,10 @@ const LoginScreen = () => {
         <Text>or</Text>
         <View className="flex-row gap-8">
           <TouchableOpacity onPress={onLoginGoogle}>
-            <Image source={require('@assets/image/login/logoGoogle.png')} />
+            <LogoGoogle />
           </TouchableOpacity>
           <TouchableOpacity onPress={onLoginApple}>
-            <Image source={require('@assets/image/login/logoApple.png')} />
+            <LogoApple />
           </TouchableOpacity>
         </View>
       </View>
