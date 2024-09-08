@@ -1,10 +1,10 @@
+import LogoApple from '@assets/svg/logoApple.svg'
+import LogoGoogle from '@assets/svg/logoGoogle.svg'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import Checkbox from 'expo-checkbox'
 import React, { useState, useEffect } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
-import LogoGoogle from '@assets/svg/logoGoogle.svg'
-import LogoApple from '@assets/svg/logoApple.svg'
 
 const LoginScreen = () => {
   const [isCheck, setCheck] = useState(false)
