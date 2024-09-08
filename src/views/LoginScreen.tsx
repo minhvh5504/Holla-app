@@ -1,12 +1,13 @@
 import LogoApple from '@assets/svg/logoApple.svg'
 import LogoGoogle from '@assets/svg/logoGoogle.svg'
+import BackUpIcon from '@components/BackUp/BackUpIcon'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import Checkbox from 'expo-checkbox'
 import React, { useState, useEffect } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }: { navigation: any }) => {
   const [isCheck, setCheck] = useState(false)
   const [checkPasswordVisible, setPasswordVisible] = useState(false)
   const [userName, setUserName] = useState('')
@@ -46,7 +47,6 @@ const LoginScreen = () => {
       }
     }
   }
-
   const onForgotPassWord = () => {
     console.log('onForgotPassWord.')
   }
@@ -57,7 +57,7 @@ const LoginScreen = () => {
     console.log('onLoginApple.')
   }
   const onSignup = () => {
-    console.log('onSignup.')
+    navigation.navigate('Register')
   }
 
   useEffect(() => {
@@ -69,8 +69,7 @@ const LoginScreen = () => {
   return (
     <View>
       <View>
-        <MaterialIcons name="arrow-back" size={32} className="mt-16 left-6" />
-        <View className="mt-14 items-center justify-center flex-row gap-10">
+        <View className="mt-36 items-center justify-center flex-row gap-10">
           <Text className="color-[#238C98] text-6xl font-bold">Log in</Text>
         </View>
       </View>
@@ -113,7 +112,7 @@ const LoginScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <View className="mt-20 items-center flex gap-12">
+      <View className="mt-24 items-center flex gap-12">
         <View className="justify-center items-center w-80 h-12 bg-[#238C98] rounded-xl">
           <TouchableOpacity onPress={handleLogin}>
             <Text className="color-white text-lg font-bold">Log in</Text>
