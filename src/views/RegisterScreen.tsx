@@ -1,11 +1,12 @@
 import LogoApple from '@assets/svg/logoApple.svg'
 import LogoGoogle from '@assets/svg/logoGoogle.svg'
+import BackUpIcon from '@components/BackUp/BackUpIcon'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import React, { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }: { navigation: any }) => {
   const [checkPasswordVisible, setPasswordVisible] = useState(false)
   const [email, setEmail] = useState('')
   const [userName, setUserName] = useState('')
@@ -54,6 +55,9 @@ const RegisterScreen = () => {
     }
   }
 
+  const onBackUp = () => {
+    navigation.goBack()
+  }
   const onLoginGoogle = () => {
     console.log('onLoginGoogle.')
   }
@@ -61,33 +65,35 @@ const RegisterScreen = () => {
     console.log('onLoginApple.')
   }
   const onLogin = () => {
-    console.log('onLogin.')
+    navigation.navigate('Login')
   }
 
   return (
     <View>
       <View>
-        <MaterialIcons name="arrow-back" size={32} className="mt-16 left-6" />
+        <TouchableOpacity onPress={onBackUp}>
+          <BackUpIcon />
+        </TouchableOpacity>
         <View className="mt-14 items-center justify-center flex-row gap-10">
           <Text className="color-[#238C98] text-6xl font-bold">Sign up</Text>
         </View>
       </View>
       <View className="mt-12 p-8">
-        <MaterialIcons name="email" size={25} className="mt-16 px-8 absolute opacity-60" />
+        <MaterialIcons name="email" size={25} className="mt-12 px-8 absolute opacity-60" />
         <TextInput
           placeholder="Email"
           value={email}
           onChangeText={setEmail}
-          className="mt-6 px-10 border-b-2 h-12 border-blue-300"
+          className=" mt-2 px-10 border-b-2 h-12 border-blue-300"
         />
-        <MaterialIcons name="person" size={25} className="mt-40 px-8 absolute opacity-60" />
+        <MaterialIcons name="person" size={25} className="mt-36 px-8 absolute opacity-60" />
         <TextInput
           placeholder="Username"
           value={userName}
           onChangeText={setUserName}
           className="mt-12 px-10 border-b-2 h-12 border-blue-300"
         />
-        <MaterialIcons name="lock" size={25} className="mt-64 px-8 absolute opacity-60" />
+        <MaterialIcons name="lock" size={25} className="mt-60 px-8 absolute opacity-60" />
         <TextInput
           placeholder="Password"
           value={passWord}
@@ -107,7 +113,7 @@ const RegisterScreen = () => {
           )}
         </TouchableOpacity>
       </View>
-      <View className="mt-20 items-center flex gap-12">
+      <View className="mt-16 items-center flex gap-12">
         <View className="justify-center items-center w-80 h-12 bg-[#238C98] rounded-xl">
           <TouchableOpacity onPress={handleSignup}>
             <Text className="color-white text-lg font-bold">Sign up</Text>
@@ -123,7 +129,7 @@ const RegisterScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <View className="mt-16 flex-row gap-3 justify-center w-11/12">
+      <View className="mt-20 flex-row gap-3 justify-center w-11/12">
         <Text>Already have an account?</Text>
         <TouchableOpacity onPress={onLogin}>
           <Text className="font-black color-[#238C98]">Login</Text>
