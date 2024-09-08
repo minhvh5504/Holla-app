@@ -1,4 +1,4 @@
-import AppLoader from '@components/loading/AppLoader'
+import AppLoader from '@components/Loading/AppLoader'
 import { View, Text } from 'react-native'
 
 const LoadingScreen = () => {
