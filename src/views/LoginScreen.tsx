@@ -1,19 +1,21 @@
 import LogoApple from '@assets/svg/logoApple.svg'
 import LogoGoogle from '@assets/svg/logoGoogle.svg'
-import BackUpIcon from '@components/BackUp/BackUpIcon'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import Checkbox from 'expo-checkbox'
 import React, { useState, useEffect } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Alert, ActivityIndicator } from 'react-native'
 
 const LoginScreen = ({ navigation }: { navigation: any }) => {
   const [isCheck, setCheck] = useState(false)
   const [checkPasswordVisible, setPasswordVisible] = useState(false)
   const [userName, setUserName] = useState('')
   const [passWord, setPassWord] = useState('')
+  const [loginPending, setLoginPending] = useState(false)
 
   const handleLogin = () => {
+    setLoginPending(true)
+
     if (!userName) Alert.alert('Error', 'Username is required!')
     else {
       if (!passWord) {
@@ -40,7 +42,10 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
                 'Password must include at least 1 uppercase letter, 1 special character, and both letters and numbers!'
               )
             else {
-              console.log('Login successful.')
+              setTimeout(() => {
+                setLoginPending(false)
+                navigation.navigate('Home')
+              }, 1200)
             }
           }
         }
@@ -67,7 +72,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
   }, [isCheck])
 
   return (
-    <View>
+    <>
       <View>
         <View className="mt-36 items-center justify-center flex-row gap-10">
           <Text className="color-[#238C98] text-6xl font-bold">Log in</Text>
@@ -111,13 +116,18 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
             <Text className="mx-32 text-base font-semibold">Forgot Password?</Text>
           </TouchableOpacity>
         </View>
+        <View className="justify-center items-center">
+          {loginPending ? (
+            <ActivityIndicator color="blue" size="large" className="absolute" />
+          ) : null}
+        </View>
       </View>
       <View className="mt-24 items-center flex gap-12">
-        <View className="justify-center items-center w-80 h-12 bg-[#238C98] rounded-xl">
-          <TouchableOpacity onPress={handleLogin}>
+        <TouchableOpacity onPress={handleLogin}>
+          <View className="justify-center items-center w-80 h-12 bg-[#238C98] rounded-xl">
             <Text className="color-white text-lg font-bold">Log in</Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
         <Text>or</Text>
         <View className="flex-row gap-8">
           <TouchableOpacity onPress={onLoginGoogle}>
@@ -134,7 +144,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
           <Text className="font-black color-[#238C98]">Sign up</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </>
   )
 }
 

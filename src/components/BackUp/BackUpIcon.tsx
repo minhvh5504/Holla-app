@@ -1,6 +1,5 @@
-import { View, Text } from 'react-native'
-import React from 'react'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
+import { View } from 'react-native'
 
 const BackUpIcon = () => {
   return (
