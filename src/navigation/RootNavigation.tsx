@@ -1,20 +1,21 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import HomeScreen from '@views/HomeScreen'
 import LoadingScreen from '@views/LoadingScreen'
 import LoginScreen from '@views/LoginScreen'
 import RegisterScreen from '@views/RegisterScreen'
 import { useEffect, useState } from 'react'
 
+import DrawerNavigation from './DrawerNavigation'
+
 const Stack = createNativeStackNavigator()
 
-function RootStack() {
+const RootStack = () => {
   return (
     <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Loading" component={LoadingScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
-      <Stack.Screen name="Loading" component={LoadingScreen} />
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="HomeDrawer" component={DrawerNavigation} />
     </Stack.Navigator>
   )
 }

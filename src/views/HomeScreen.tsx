@@ -9,9 +9,9 @@ import Location from '@assets/svg/location.svg'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import { View, Text, ScrollView, TextInput, TouchableOpacity } from 'react-native'
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }: { navigation: any }) => {
   const onMenuPress = () => {
-    console.log('onMenuPress')
+    navigation.openDrawer()
   }
 
   const onSearchPress = () => {

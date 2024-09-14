@@ -44,7 +44,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
             else {
               setTimeout(() => {
                 setLoginPending(false)
-                navigation.navigate('Home')
+                navigation.navigate('HomeDrawer')
               }, 1200)
             }
           }
