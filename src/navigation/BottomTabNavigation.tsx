@@ -13,6 +13,7 @@ const BottomTabNavigation = () => {
       screenOptions={{
         headerTitleAlign: 'center',
         headerShown: false,
+        tabBarActiveTintColor: 'black',
       }}
     >
       <Tab.Screen
