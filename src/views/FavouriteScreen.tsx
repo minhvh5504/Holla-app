@@ -1,7 +1,3 @@
-import { useState, useEffect } from 'react'
-import { View, Text, TouchableOpacity, ScrollView, Modal, Button } from 'react-native'
-import MaterialIcons from '@expo/vector-icons/MaterialIcons'
-import BackUpIcon from '@components/BackUp/BackUpIcon'
 import EstabeerHotel from '@assets/svg/estabeezhotel.svg'
 import FineseHotel from '@assets/svg/finesehotel.svg'
 import AzaoniapelHotel from '@assets/svg/homeazaoniapel.svg'
@@ -12,6 +8,10 @@ import ThepearlsHotel from '@assets/svg/homethepearls.svg'
 import KrisfelvHotel from '@assets/svg/krisfelvhotel.svg'
 import Location from '@assets/svg/location.svg'
 import ThePheelsHotel from '@assets/svg/thepheelshotel.svg'
+import BackUpIcon from '@components/BackUp/BackUpIcon'
+import MaterialIcons from '@expo/vector-icons/MaterialIcons'
+import { useState, useEffect } from 'react'
+import { View, Text, TouchableOpacity, ScrollView, Modal } from 'react-native'
 
 type FavouriteItem = {
   id: number
