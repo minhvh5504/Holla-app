@@ -4,14 +4,16 @@ import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawe
 import { View, Text, Switch, TouchableOpacity } from 'react-native'
 
 const CustomDrawer = (props: any) => {
+  const { navigation } = props
+
   const onLogout = () => {
-    console.log('onLogout')
+    navigation.popToTop()
   }
   const onHelpAndSupport = () => {
-    console.log('onLogout')
+    console.log('onHelpAndSupport')
   }
   const onRate = () => {
-    console.log('onLogout')
+    console.log('onRate')
   }
 
   return (

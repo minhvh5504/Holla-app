@@ -5,9 +5,9 @@ import React from 'react'
 import { View, Text, ScrollView } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
-const NotificationScreen = (navigation: any) => {
+const NotificationScreen = ({ navigation }: any) => {
   const onBackUp = () => {
-    console.log('onBackUpp')
+    navigation.goBack()
   }
   return (
     <ScrollView className="bg-[#F4F4F4]">
