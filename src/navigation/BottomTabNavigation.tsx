@@ -31,17 +31,17 @@ const BottomTabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="Notification"
-        component={NotificationScreen}
-        options={{
-          tabBarIcon: () => <MaterialIcons name="notifications" size={30} color="#B8B8B9" />,
-        }}
-      />
-      <Tab.Screen
         name="Favourite"
         component={FavouriteScreen}
         options={{
           tabBarIcon: () => <MaterialIcons name="favorite" size={30} color="#B8B8B9" />,
+        }}
+      />
+      <Tab.Screen
+        name="Notification"
+        component={NotificationScreen}
+        options={{
+          tabBarIcon: () => <MaterialIcons name="notifications" size={30} color="#B8B8B9" />,
         }}
       />
     </Tab.Navigator>

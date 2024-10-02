@@ -167,8 +167,8 @@ const FavouriteScreen = ({ navigation }: any) => {
             animationType="slide"
             onRequestClose={() => setIsModalVisible(false)}
           >
-            <View className="flex-1 justify-end items-center bg-opacity-50 ">
-              <View className="mb-6 bg-white p-2 rounded-t-3xl rounded-b-3xl w-11/12">
+            <View className="flex-1 p-2 justify-end items-center bg-opacity-50 ">
+              <View className="mb-6 bg-white p-5 rounded-t-3xl rounded-b-3xl w-full">
                 <View className=" gap-6 justify-center items-center">
                   <View className="mt-5 border-t-2 w-20 opacity-50" />
                   <Text className="text-lg font-extrabold opacity-70">Remove from bookmark?</Text>
