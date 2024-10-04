@@ -1,4 +1,4 @@
-import MaterialIcons from '@expo/vector-icons/MaterialIcons'
+import CustomBottomTab from '@components/CustomBottomTab/CustomBottomTab'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import BookingScreen from '@views/BookingScreen'
 import FavouriteScreen from '@views/FavouriteScreen'
@@ -10,38 +10,77 @@ const Tab = createBottomTabNavigator()
 const BottomTabNavigation = () => {
   return (
     <Tab.Navigator
-      screenOptions={{
+      screenOptions={({ route }) => ({
         headerTitleAlign: 'center',
         headerShown: false,
-        tabBarActiveTintColor: 'black',
-      }}
+        tabBarStyle: {
+          marginLeft: 2,
+          width: '99%',
+          height: 80,
+          backgroundColor: 'white',
+          borderRadius: 35,
+          justifyContent: 'center',
+        },
+      })}
     >
       <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: () => <MaterialIcons name="home" size={30} color="#238C98" />,
+          tabBarButton: (props: any) => (
+            <CustomBottomTab
+              iconName="home"
+              label="Home"
+              color="#B8B8B9"
+              focused={props.accessibilityState.selected}
+              onPress={props.onPress}
+            />
+          ),
         }}
       />
       <Tab.Screen
         name="Booking"
         component={BookingScreen}
         options={{
-          tabBarIcon: () => <MaterialIcons name="view-list" size={30} color="#B8B8B9" />,
+          tabBarButton: (props: any) => (
+            <CustomBottomTab
+              iconName="view-list"
+              label="Booking"
+              color="#B8B8B9"
+              focused={props.accessibilityState.selected}
+              onPress={props.onPress}
+            />
+          ),
         }}
       />
       <Tab.Screen
         name="Favourite"
         component={FavouriteScreen}
         options={{
-          tabBarIcon: () => <MaterialIcons name="favorite" size={30} color="#B8B8B9" />,
+          tabBarButton: (props: any) => (
+            <CustomBottomTab
+              iconName="favorite"
+              label="Favourite"
+              color="#B8B8B9"
+              focused={props.accessibilityState.selected}
+              onPress={props.onPress}
+            />
+          ),
         }}
       />
       <Tab.Screen
         name="Notification"
         component={NotificationScreen}
         options={{
-          tabBarIcon: () => <MaterialIcons name="notifications" size={30} color="#B8B8B9" />,
+          tabBarButton: (props: any) => (
+            <CustomBottomTab
+              iconName="notifications"
+              label="Notifications"
+              color="#B8B8B9"
+              focused={props.accessibilityState.selected}
+              onPress={props.onPress}
+            />
+          ),
         }}
       />
     </Tab.Navigator>
