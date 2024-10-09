@@ -10,7 +10,8 @@
       "@views/*": ["src/views/*"],
       "@assets/*": ["src/assets/*"],
       "@navigation/*": ["src/navigation/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@constanst/*": ["src/constanst/*"]
     }
   }
 }

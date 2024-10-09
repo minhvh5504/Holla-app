@@ -26,7 +26,7 @@ function Navigation() {
   useEffect(() => {
     setTimeout(() => {
       setShowLoading(false)
-    }, 2000)
+    }, 3000)
   }, [])
 
   return showLoading ? <LoadingScreen /> : <RootStack />
