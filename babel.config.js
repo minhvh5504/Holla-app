@@ -15,6 +15,7 @@ module.exports = function (api) {
             '@assets': './src/assets',
             '@navigation': './src/navigation',
             '@utils': './src/utils',
+            '@constanst': './src/constants',
           },
         },
         'react-native-reanimated/plugin',

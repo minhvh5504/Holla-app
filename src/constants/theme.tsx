@@ -1,4 +1,5 @@
 const COLORS = {
+  default: '#238C98',
   primary: '#312651',
   secondary: '#444262',
   tertiary: '#FF7754',
